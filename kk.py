@@ -99,7 +99,7 @@ def brute():
                 pass
 
     os.system("rm -rf public.json")
-    rename()
+    sys.exit()
 
 def crack(uid, pwx, host, **kwargs):
 	ua = ("Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]")
@@ -137,35 +137,6 @@ def crack(uid, pwx, host, **kwargs):
 				continue
 
 		loop+=1
-			
-def rename():
-    try:
-        os.makedirs('/data/data/com.termux/files/home/fb/hasil')
-        time.sleep(1)
-    except OSError:
-        pass
-    try:
-        open("/data/data/com.termux/files/home/fb/cp.txt","r")
-        os.system("mv /data/data/com.termux/files/home/fb/cp.txt /data/data/com.termux/files/home/fb/cpcok.txt")
-        onem = datetime.datetime.now().strftime("%d%m%y_%H%M%S")
-        oldname = r"/data/data/com.termux/files/home/fb/cpcok.txt"
-        newname = r"/data/data/com.termux/files/home/fb/hasil/cpcp" + onem + ".txt"
-        shutil.move(oldname, newname)
-        print("\nDONE")
-    except (KeyError, IOError):
-        print("\nZONK")
-    try:
-        open("/data/data/com.termux/files/home/fb/ok.txt","r")
-        os.system("mv /data/data/com.termux/files/home/fb/ok.txt /data/data/com.termux/files/home/fb/okcok.txt")
-        onem = datetime.datetime.now().strftime("%d%m%y_%H%M%S")
-        oldname = r"/data/data/com.termux/files/home/fb/okcok.txt"
-        newname = r"/data/data/com.termux/files/home/fb/hasil/okok" + onem + ".txt"
-        shutil.move(oldname, newname)
-        print("\nDONE")
-    except (KeyError, IOError):
-        pass
-    raw_input('\nENTER to CONTINUE')
-    sys.exit()
 
 if __name__ == "__main__":
 	os.system('clear');print 
