@@ -256,11 +256,6 @@ def crack(uid, pwx):
 
 		loop+=1
 
-def buat_folder():
-	try:os.mkdir("CP")
-	except:pass
-	try:os.mkdir("OK")
-	except:pass   
 def jalan(z):
     for e in z + '\n':
         sys.stdout.write(e)
@@ -268,8 +263,9 @@ def jalan(z):
         time.sleep(0.0012)
  
 if __name__ == "__main__":
-	os.system("git pull")
-	os.system("touch login.txt")
-	buat_folder()
+	try:os.mkdir('CP')
+	except:pass
+	try:os.mkdir('OK')
+	except:pass
 	brute()
 	
