@@ -256,12 +256,7 @@ def crack(uid, pwx):
 
 		loop+=1
 
-def jalan(z):
-    for e in z + '\n':
-        sys.stdout.write(e)
-        sys.stdout.flush()
-        time.sleep(0.0012)
- 
+
 if __name__ == "__main__":
 	try:os.mkdir('CP')
 	except:pass
