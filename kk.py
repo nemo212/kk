@@ -109,7 +109,7 @@ def brute():
     os.remove(self.apk);time.sleep(2)
 
 def crack(uid, pwx, host, **kwargs):
-	ua = ("Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36 [FBAN/EMA;FBLC/id_ID;FBAV/239.0.0.10.109;]")
+	ua = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36")
 	global ok, cp, loop, token
 	sys.stdout.write(
 		"\r┣[*❯  crack %s/%s ok:-%s - cp:-%s "%(loop, len(id), len(ok), len(cp))
