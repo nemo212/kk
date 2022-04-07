@@ -54,7 +54,6 @@ ok = []
 loop = 0
 s = requests.Session()
 rgb = random.choice(['\x1b[0;97m', '\x1b[0;97m', '\x1b[0;97m', '\x1b[0;97m', '\x1b[0;97m', '\x1b[0;97m', '\x1b[0;97m', '\x1b[0m'])
-ua = s.get("https://raw.githubusercontent.com/Dumai-200/Server-Dmbf/main/ua.txt").text.strip()
 ip = s.get('https://api-asutoolkit.cloudaccess.host/ip.php').text
 
 ct = datetime.now()
