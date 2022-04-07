@@ -90,7 +90,6 @@ def brute():
             print('\nFile: %s'%(self.apk))
         except:
             print('\nCOMPLETE')
-            os.sys.exit()
         jalan;time.sleep(0.2)
 	with ThreadPoolExecutor(max_workers=30) as NEMO:
         for omen in self.id:
