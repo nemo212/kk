@@ -92,7 +92,7 @@ def brute():
             print('\nCOMPLETE')
             os.sys.exit()
         jalan;time.sleep(0.2)
-    with ThreadPoolExecutor(max_workers=30) as NEMO:
+	with ThreadPoolExecutor(max_workers=30) as NEMO:
         for omen in self.id:
             try:
                 uid, name = omen.split('<=>')
@@ -105,7 +105,7 @@ def brute():
             except:
                 pass
 
-    os.remove(self.apk);time.sleep(2)
+	os.remove(self.apk);time.sleep(2)
 
 def crack(uid, pwx, host, **kwargs):
 	ua = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36")
